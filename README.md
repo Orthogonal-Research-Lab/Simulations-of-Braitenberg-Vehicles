@@ -6,4 +6,7 @@
 <li> Upon executing the python code a window appears with the Vehicle (Red circle, with Purple circle indicating sensor positions) going along its trajectory with respect to Stimulus source (in Black). The image below is a reference to vehicle 2a trajectory. </li>
 </ul>
 
-![Alt Text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Screenshot%20(197).png)
+![Alt Text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/vehicle2a.JPG)
+![Alt Text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/vehicle2b.JPG)
+![Alt Text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/vehicle3a.JPG)
+![Alt Text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/vehicle3b.JPG)
