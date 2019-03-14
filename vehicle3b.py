@@ -10,7 +10,7 @@ source.shape("circle")
 source.color("black")
 source.penup()
 source.speed(100)
-source.goto(0 ,0)
+source.goto(0, 0)
 
 vr = turtle.Turtle()
 vr.shape("circle")
@@ -30,14 +30,14 @@ v.color("red")
 v.penup()
 v.speed(100)
 
-x = -250
+x = -550
 y = -300
 g = 40
-l = 15
-k1 = 1
-k2 = .0000005
-k = .5
-v.goto(x,y)
+l = 10
+k1 = 100
+k2 = 5
+k = .00005
+v.goto(x, y)
 
 dr = math.sqrt((v.xcor()+g/2-source.xcor()) ** 2 +
                (v.ycor()+l-source.ycor()) ** 2)
@@ -48,12 +48,13 @@ velr = k * (k1 + (k2*dr ** 2))
 
 vl.goto(v.xcor()-g/2, v.ycor()+l)
 vr.goto(v.xcor()+g/2, v.ycor()+l)
-vr.dx = vell*(vl.xcor()-source.xcor())/dl
-vr.dy = vell*(vl.ycor()-source.ycor())/dl
-vl.dx = velr*(vr.xcor()-source.xcor())/dr
-vl.dy = velr*(vr.ycor()-source.ycor())/dr
+vl.dx = vell*(vl.xcor()-source.xcor())/dl
+vl.dy = vell*(vl.ycor()-source.ycor())/dl
+vr.dx = velr*(vr.xcor()-source.xcor())/dr
+vr.dy = velr*(vr.ycor()-source.ycor())/dr
 v.dx = (vl.dx+vr.dx)
 v.dy = (vl.dy+vr.dy)
+
 v.pendown()
 
 while True:
@@ -70,10 +71,8 @@ while True:
     vr.dy = vell*abs(vl.ycor()-source.ycor())/dl
     vl.dx = velr*abs(vr.xcor()-source.xcor())/dr
     vl.dy = velr*abs(vr.ycor()-source.ycor())/dr
-    if v.dx > 0:
-        v.dx = (vl.dx+vr.dx)
-    else:
-        v.dx = -(vl.dx+vr.dx)
+
+    v.dx = abs(vl.dx)-abs(vr.dx)
     if v.dy > 0:
         v.dy = (vl.dy+vr.dy)
     else:
@@ -81,10 +80,8 @@ while True:
 
     print("x = ", v.xcor(), " y = ", v.ycor(), "Vx = ", v.dx, "Vy = ", v.dy)
 
-
     v.sety(v.ycor()-v.dy)
     v.setx(v.xcor()-v.dx)
-
 
 
 wn.mainloop()
