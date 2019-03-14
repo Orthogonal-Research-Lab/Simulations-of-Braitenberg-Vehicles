@@ -85,5 +85,4 @@ while True:
     v.sety(v.ycor()-v.dy)
     v.setx(v.xcor()-v.dx)
 
-
 wn.mainloop()
