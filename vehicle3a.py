@@ -71,16 +71,14 @@ while True:
     vl.dy = vell*abs(vl.ycor()-source.ycor())/dl
     vr.dx = velr*abs(vr.xcor()-source.xcor())/dr
     vr.dy = velr*abs(vr.ycor()-source.ycor())/dr
-    if v.dx > 0:
-        v.dx = (vl.dx+vr.dx)
-    else:
-        v.dx = -(vl.dx+vr.dx)
+
+    v.dx = -abs(vl.dx)+abs(vr.dx)
     if v.dy > 0:
         v.dy = (vl.dy+vr.dy)
     else:
         v.dy = -(vl.dy+vr.dy)
 
-    print("x = ", v.xcor(), " y = ", v.ycor(), "Vx = ", v.dx, "Vy = ", v.dy)
+    print("x = ", v.xcor(), " y = ", v.ycor(), " Vx = ", v.dx, " Vy = ", v.dy, " Vlx = ", vl.dx, " Vrx = ", vr.dx)
 
     v.sety(v.ycor()-v.dy)
     v.setx(v.xcor()-v.dx)
